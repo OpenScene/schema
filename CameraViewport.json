@@ -1,0 +1,29 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "Camera Viewport",
+  "id": "CameraViewport.json",
+  "type": "object",
+  "description": "",
+
+  "properties": {
+    "top": {
+      "type": "number"
+    },
+    "left": {
+      "type": "number"
+    },
+    "width": {
+      "type": "number"
+    },
+    "height": {
+      "type": "number"
+    }
+  },
+
+  "required": [
+    "top",
+    "left",
+    "width",
+    "height"
+  ]
+}

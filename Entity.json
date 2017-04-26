@@ -1,0 +1,56 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "Entity",
+  "id": "Entity.json",
+  "type": "object",
+  "description": "",
+
+  "definitions": {
+
+    "class": {
+      "type": "string",
+      "enum": [
+        "scene",
+        "mesh",
+        "material",
+        "geometry",
+        "light",
+        "camera"
+      ]
+    },
+
+    "id": {
+      "oneOf": [{
+        "type": "number"
+      }, {
+      "type": "string"
+      }]
+    },
+
+    "entity": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "$ref": "#/definitions/id"
+        },
+        "class": {
+          "$ref": "#/definitions/class"
+        },
+        "children": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/entity"
+          }
+        },
+        "description": {
+          "type": "string"
+        }
+      }
+    }
+  },
+
+  "$ref": "#/definitions/entity",
+  "required": [
+    "class"
+  ]
+}

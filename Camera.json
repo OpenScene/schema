@@ -1,0 +1,81 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "Camera",
+  "id": "Camera.json",
+  "description": "",
+
+  "type": "object",
+
+  "allOf": [{
+    "$ref": "Entity.json",
+    "$ref": "Object3D.json"
+  }],
+
+  "definitions": {
+
+    "IntArray4": {
+      "type": "array",
+      "minLength": 4,
+      "maxLength": 4,
+      "items": {
+        "type": "number"
+      }
+    },
+
+    "projection": {
+      "type": "string",
+      "enum": [
+        "perspective"
+      ]
+    },
+
+    "viewport": {
+      "anyOf": [
+        {
+          "$ref": "CameraViewport.json"
+        },
+        {
+          "$ref": "Vector4.json"
+        },
+        {
+          "$ref": "#/definitions/IntArray4"
+        }
+      ]
+    }
+  },
+
+  "properties": {
+
+    "class": {
+      "type": "string",
+      "enum": [
+        "camera"
+      ]
+    },
+
+    "projection": {
+      "$ref": "#/definitions/projection"
+    },
+
+    "viewport": {
+      "$ref": "#/definitions/viewport"
+    },
+
+    "target": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 3,
+      "items": {
+        "type": "array"
+      }
+    },
+
+    "fov": {
+      "type": "number"
+    }
+  },
+
+  "required": [
+    "projection"
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "Object 3D",
+  "id": "Object3D.json",
+  "description": "",
+
+  "allOf": {
+    "$ref": "Entity.json"
+  },
+
+  "properties": {
+
+  }
+}
