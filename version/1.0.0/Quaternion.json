@@ -1,0 +1,22 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "Quaternion",
+  "id": "Quaternion.json",
+  "description": "4-component quaternion vector.",
+  "type": "object",
+
+  "properties": {
+    "x": {
+      "type": "number"
+    },
+    "y": {
+      "type": "number"
+    },
+    "z": {
+      "type": "number"
+    },
+    "w": {
+      "type": "number"
+    }
+  }
+}

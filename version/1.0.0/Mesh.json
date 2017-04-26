@@ -1,19 +1,21 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
-  "title": "scene",
-  "id": "#/scene",
-  "type": "object",
+  "title": "Mesh",
+  "id": "Mesh.json",
   "description": "",
+  "type": "object",
 
   "allOf": [
-    "$ref": "Entity.json"
+    {
+      "$ref": "Object3D.json"
+    }
   ],
 
   "properties": {
     "class": {
       "type": "string",
       "enum": [
-        "scene"
+        "mesh"
       ]
     }
   }
