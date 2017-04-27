@@ -3,28 +3,23 @@
   "title": "Entity",
   "id": "Entity.json",
   "type": "object",
-  "description": "",
+  "description": "The `Entity` is the base type for all nodes in a OpenScene graph that represent a meaningful entity.",
 
   "definitions": {
 
     "class": {
-      "type": "string",
-      "enum": [
-        "scene",
-        "mesh",
-        "material",
-        "geometry",
-        "light",
-        "camera"
-      ]
+      "type": "string"
     },
 
     "id": {
-      "oneOf": [{
-        "type": "number"
-      }, {
-      "type": "string"
-      }]
+      "oneOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "string"
+        }
+      ]
     },
 
     "entity": {

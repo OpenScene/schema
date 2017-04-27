@@ -1,0 +1,29 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "Color",
+  "id": "Color.json",
+  "description": "4-component rgba color vector.",
+  "type": "object",
+
+  "properties": {
+    "r": {
+      "type": "number"
+    },
+    "g": {
+      "type": "number"
+    },
+    "b": {
+      "type": "number"
+    },
+    "a": {
+      "type": "number"
+    }
+  },
+
+  "required": [
+    "r",
+    "g",
+    "b",
+    "a"
+  ]
+}

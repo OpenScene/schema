@@ -1,0 +1,57 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "Geometry",
+  "id": "Geometry.json",
+  "description": "The `Geometry` type represents an interface for describing a gemetry for a mesh. The geometry may have a simplicial complex, be a built-in primitive, or be from an external source.",
+
+  "allOf": [
+    {
+      "$ref": "Entity.json"
+    }
+  ],
+
+  "definitions": {
+
+    "primitive": {
+      "type": "string",
+      "enum": [
+        "triangle",
+        "cylinder",
+        "capsule",
+        "sphere",
+        "plane",
+        "torus",
+        "box"
+      ]
+    },
+
+    "type": {
+      "type": "string",
+      "enum": [
+        "three",
+        "obj"
+      ]
+    }
+  },
+
+  "properties": {
+    "class": {
+      "type": "string",
+      "enum": [
+        "geometry"
+      ]
+    },
+    "complex": {
+      "$ref": "SimplicialComplex.json"
+    },
+    "primitive": {
+      "$ref": "#/definitions/primitive"
+    },
+    "source": {
+      "type": "string"
+    },
+    "type": {
+      "$ref": "#/definitions/type"
+    }
+  }
+}

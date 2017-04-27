@@ -1,0 +1,122 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "SimplicialComplex",
+  "id": "SimplicialComplex.json",
+  "description": "",
+  "type": "object",
+
+  "definitions": {
+
+    "number-array": {
+      "type": "array",
+      "items": {
+        "type": "number"
+      }
+    },
+
+    "positions": {
+      "anyOf": [
+        {
+          "type": "array",
+          "items": {
+            "$ref": "Vector3.json"
+          }
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/number-array"
+          }
+        },
+        {
+          "$ref": "#/definitions/number-array"
+        }
+      ]
+    },
+
+    "normals": {
+      "anyOf": [
+        {
+          "type": "array",
+          "items": {
+            "$ref": "Vector3.json"
+          }
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/number-array"
+          }
+        },
+        {
+          "$ref": "#/definitions/number-array"
+        }
+      ]
+    },
+
+    "cells": {
+      "anyOf": [
+        {
+          "type": "array",
+          "items": {
+            "$ref": "Vector3.json"
+          }
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/number-array"
+          }
+        },
+        {
+          "$ref": "#/definitions/number-array"
+        }
+      ]
+    },
+
+    "uvs": {
+      "anyOf": [
+        {
+          "type": "array",
+          "items": {
+            "$ref": "Vector2.json"
+          }
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/number-array"
+          }
+        },
+        {
+          "$ref": "#/definitions/number-array"
+        }
+      ]
+    }
+  },
+
+  "properties": {
+    "class": {
+      "type": "string",
+      "enum": [
+        "complex"
+      ]
+    },
+    "position": {
+      "$ref": "#/definitions/positions"
+    },
+    "normals": {
+      "$ref": "#/definitions/normals"
+    },
+    "cells": {
+      "$ref": "#/definitions/cells"
+    },
+    "uvs": {
+      "$ref": "#/definitions/uvs"
+    }
+  },
+
+  "required": [
+    "positions"
+  ]
+}

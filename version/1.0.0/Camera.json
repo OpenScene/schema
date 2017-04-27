@@ -3,7 +3,6 @@
   "title": "Camera",
   "id": "Camera.json",
   "description": "",
-
   "type": "object",
 
   "allOf": [{
@@ -13,10 +12,8 @@
 
   "definitions": {
 
-    "IntArray4": {
+    "number-array": {
       "type": "array",
-      "minLength": 4,
-      "maxLength": 4,
       "items": {
         "type": "number"
       }
@@ -25,7 +22,8 @@
     "projection": {
       "type": "string",
       "enum": [
-        "perspective"
+        "perspective",
+        "orthographic"
       ]
     },
 
@@ -38,7 +36,18 @@
           "$ref": "Vector4.json"
         },
         {
-          "$ref": "#/definitions/IntArray4"
+          "$ref": "#/definitions/number-array"
+        }
+      ]
+    },
+
+    "target": {
+      "anyOf": [
+        {
+          "$ref": "Vector3.json"
+        },
+        {
+          "#/definitions/number-array"
         }
       ]
     }
@@ -62,12 +71,7 @@
     },
 
     "target": {
-      "type": "array",
-      "minItems": 3,
-      "maxItems": 3,
-      "items": {
-        "type": "array"
-      }
+      "$ref": "#/definitions/target"
     },
 
     "fov": {

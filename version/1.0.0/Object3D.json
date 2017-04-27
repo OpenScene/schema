@@ -1,14 +1,79 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
-  "title": "Object 3D",
+  "title": "Object3D",
   "id": "Object3D.json",
-  "description": "",
+  "description": "The Object3D type represents the base type for all positional entities in 3D space.",
+  "type": "object",
 
   "allOf": {
     "$ref": "Entity.json"
   },
 
+  "definitions": {
+
+    "number-array": {
+      "type": "array",
+      "items": {
+        "type": "number"
+      }
+    },
+
+    "rotation": {
+      "anyOf": [
+        {
+          "$ref": "Quaternion.json"
+        },
+        {
+          "$ref": "#/definitions/number-array"
+        }
+      ]
+    },
+
+    "position": {
+      "anyOf": [
+        {
+          "$ref": "Vector3.json"
+        },
+        {
+          "$ref": "#/definitions/number-array"
+        }
+      ]
+    },
+
+    "scale": {
+      "anyOf": [
+        {
+          "$ref": "Vector3.json"
+        },
+        {
+          "$ref": "#/definitions/number-array"
+        },
+        {
+          "type": "number"
+        }
+      ]
+    }
+  },
+
   "properties": {
 
+    "class": {
+      "type": "string",
+      "enum": [
+        "object3d"
+      ]
+    },
+
+    "rotation": {
+      "$ref": "#/definitions/rotation"
+    },
+
+    "position": {
+      "$ref": "#/definitions/position"
+    },
+
+    "scale": {
+      "$ref": "#/definitions/scale"
+    }
   }
 }
